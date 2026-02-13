@@ -1,81 +1,81 @@
 # Rust Mini Backend CLI
 
-Un proyecto introductorio para aprender los fundamentos de Rust, simulando un backend simple mediante una herramienta de línea de comandos (CLI).
+An introductory project to learn Rust fundamentals, simulating a simple backend via a Command Line Interface (CLI).
 
-## 🚀 Características
+## 🚀 Features
 
-Este proyecto implementa un sistema básico de gestión de tareas (To-Do List) con persistencia en archivo JSON.
+This project implements a basic Task Management system (To-Do List) with JSON file persistence.
 
-*   **CLI Robusto**: Argumentos y subcomandos manejados con `clap`.
-*   **Persistencia**: Lectura y escritura de datos en formato JSON usando `serde` y `serde_json`.
-*   **CRUD Básico**:
-    *   Crear tareas (`add`)
-    *   Listar tareas (`list`)
-    *   Actualizar estado (`complete`)
-*   **Manejo de Errores**: Uso idiomático de `Result` y propagación de errores.
+*   **Robust CLI**: Arguments and subcommands handled with `clap`.
+*   **Persistence**: Read/Write data in JSON format using `serde` and `serde_json`.
+*   **Basic CRUD**:
+    *   Create tasks (`add`)
+    *   List tasks (`list`)
+    *   Update status (`complete`)
+*   **Error Handling**: Idiomatic use of `Result` and error propagation.
 
-## 🛠️ Requisitos
+## 🛠️ Requirements
 
 *   [Rust & Cargo](https://www.rust-lang.org/tools/install) (v1.70+)
 
-## 📦 Instalación y Uso
+## 📦 Installation & Usage
 
-1.  **Clonar el repositorio** (o descargar el código):
+1.  **Clone the repository**:
     ```bash
-    git clone <url-del-repo>
+    git clone <repo-url>
     cd rust-mini-backend
     ```
 
-2.  **Compilar el proyecto**:
+2.  **Build the project**:
     ```bash
     cargo build
     ```
 
-3.  **Ejecutar comandos**:
+3.  **Run commands**:
 
-    *   **Agregar una tarea**:
+    *   **Add a task**:
         ```bash
-        cargo run -- add --title "Aprender Rust"
+        cargo run -- add --title "Learn Rust"
         ```
 
-    *   **Listar todas las tareas**:
+    *   **List all tasks**:
         ```bash
         cargo run -- list
         ```
-        *Salida:*
+        *Output:*
         ```text
-        ID    | Estado     | Título
+        ID    | Status     | Title
         ----------------------------------------
-        1     | [ ]        | Aprender Rust
+        1     | [ ]        | Learn Rust
         ```
 
-    *   **Completar una tarea**:
+    *   **Complete a task**:
         ```bash
         cargo run -- complete --id 1
         ```
 
-    *   **Ver ayuda**:
+    *   **View help**:
         ```bash
         cargo run -- --help
         ```
 
 ## 🧪 Tests
 
-Para ejecutar las pruebas unitarias integradas:
+To run the integrated unit tests:
 
 ```bash
 cargo test
 ```
 
-## 📚 Estructura del Proyecto
+## 📚 Project Structure
 
-*   `src/main.rs`: Código fuente principal. Contiene la definición de la estructura `Task`, la lógica del CLI y las operaciones de archivo.
-*   `Cargo.toml`: Gestor de dependencias (equivalente a `pom.xml` o `build.gradle`).
-*   `db.json`: Archivo donde se almacenan los datos (se crea automáticamente).
+*   `src/main.rs`: Main source code. Contains the `Task` struct definition, CLI logic, and file operations.
+*   `Cargo.toml`: Dependency manager (equivalent to `pom.xml` or `build.gradle`).
+*   `db.json`: File where data is stored (created automatically).
 
-## 📝 Notas de Aprendizaje (Java vs Rust)
+## 📝 Learning Notes (Java vs Rust)
 
-*   **Objetos**: `struct` en lugar de `class`.
-*   **Serialización**: `#[derive(Serialize, Deserialize)]` (Serde) en lugar de Jackson/Gson.
-*   **Errores**: `Result<T, E>` explícito en lugar de `try-catch` exceptions.
-*   **Null**: `Option<T>` en lugar de `null`.
+*   **Objects**: `struct` instead of `class`.
+*   **Serialization**: `#[derive(Serialize, Deserialize)]` (Serde) instead of Jackson/Gson.
+*   **Errors**: Explicit `Result<T, E>` instead of `try-catch` exceptions.
+*   **Null**: `Option<T>` instead of `null`.
